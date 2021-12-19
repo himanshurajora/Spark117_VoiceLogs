@@ -7,18 +7,12 @@ import NewForm from '../components/Form'
  
 export default function Home() {
 
-  const handleSubmit = (data) => {
-    console.log(data)
-  }
   
 
   return (
     <Fragment>
       <div className={styles.container}>
         <h1 className='title'>My Podcasts - Spiral117</h1>
-        <NewForm onSubmit={handleSubmit}>
-
-        </NewForm>
       </div>
     </Fragment>
   )
