@@ -46,6 +46,22 @@ export default function Navbar(props) {
                                 <a onClick={handleSignIn}>SignIn</a>
                         }
                     </li>
+                    <li>
+                        {
+                        user?
+                            <Link href={"/upload"}>
+                                Upload
+                            </Link>
+                            :
+              
+                              <h4>
+                                  Welcome! Dear User
+                              </h4>
+                          
+
+                            
+                        }
+                    </li>
                 </ul>
             </nav>
         </Fragment>

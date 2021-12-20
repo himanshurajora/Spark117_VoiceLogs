@@ -23,7 +23,7 @@ export default function NewForm(props) {
 
     return (
         <Fragment>
-            <h1>New Form</h1>
+            <h1>Upload Podcast Form</h1>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="title" style={{width: "80%", fontSize: 20}} placeholder="Enter the title" ref={titleRef} />
                 <br />
