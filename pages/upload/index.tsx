@@ -3,9 +3,10 @@ import { useRouter } from "next/router";
 import app from '../../services/firebase'
 import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
+import {useCollection} from 'react-firebase-hooks/firestore'
 import NewForm from "../../components/Form";
 import { getFirestore, collection, addDoc, getDocs, deleteDoc, DocumentReference, onSnapshotsInSync } from 'firebase/firestore'
-import { getStorage, uploadBytes, ref, getDownloadURL, deleteObject } from 'firebase/storage'
+import { getStorage, uploadBytesResumable, ref, getDownloadURL, deleteObject } from 'firebase/storage'
 export default function Upload() {
     const router = useRouter();
     const auth = getAuth(app);
@@ -20,7 +21,10 @@ export default function Upload() {
     const [podcasts, setPodcasts] = useState([]);
     const [loadingPodcasts, setLoadingPodcasts] = useState(true);
     const [errorPodcasts, setErrorPodcasts] = useState('');
-
+    const [progress, setProgress] = useState(0);
+    const [value, valueLoad, valueError] = useCollection(db, {
+        snapshotListenOptions: { includeMetadataChanges: true },
+    });
     // wait for loading to be false and if user is not logged in, redirect to home
     useEffect(() => {
         if (loading) return;
@@ -51,13 +55,26 @@ export default function Upload() {
             }
         };
         fetchData();
-
-        onSnapshotsInSync(firestore, () => {
-            fetchData();
-        })
     }, []);
 
+    useEffect(() => {
+        if (valueLoad) return;
+        if (valueError) {
+            setErrorPodcasts(valueError.message);
+            return;
+        }
+        const chunks = [];
+        value.forEach(doc => {
+            chunks.push({
+                ref: doc.ref,
+                data: doc.data()
+            })
+        });
+        setPodcasts(chunks);
+        setLoadingPodcasts(false);
+    }, [value, valueLoad, valueError]);
 
+            
 
     const handleSubmit = async (data) => {
         try {
@@ -65,27 +82,47 @@ export default function Upload() {
             const file = data.file;
             const fileName = file.name;
 
-            // upload file to firebase storage 
-            const fileRef = ref(storage, fileName);
-            await uploadBytes(fileRef, file);
-            const url = await getDownloadURL(fileRef);
-
-            const podcast = {
-                title,
-                discription,
-                user: user.uid,
-                audioUrl: url,
-                createdAt: new Date()
+            if (title === '' || discription === '' || file === '') {
+                setStatus('Please fill in all the fields');
             }
+            else {
+                setStatus('Uploading...');
+                setProgress(0);
+                // upload file to firebase storage 
+                const fileRef = ref(storage, fileName);
+                let uploadTask = uploadBytesResumable(fileRef, file);
 
-            const docRef = await addDoc(db, podcast);
+                // get percentage of upload
+                uploadTask.on('state_changed', (snapshot) => {
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    setProgress(progress);
+                }, (error) => {
+                    console.log(error);
+                }, () => {
+                    setStatus('Upload Complete');
+                });
 
-            setStatus('success')
+
+                const url = await getDownloadURL(fileRef);
+
+                const podcast = {
+                    title,
+                    discription,
+                    user: user.uid,
+                    audioUrl: url,
+                    createdAt: new Date()
+                }
+
+               let docRef = await addDoc(db, podcast);
+
+               
+            }
         }
         catch (error) {
-
-            setStatus(error.message)
+            console.log(error);
+            setStatus("error");
         }
+
     }
 
     const deletePodcast = async (url: string, podcastRef: DocumentReference) => {
@@ -109,6 +146,8 @@ export default function Upload() {
             <h1>Welcome {displayName}</h1>
             <h3>{email}</h3>
             <NewForm onSubmit={handleSubmit} />
+            <p>Upload Progress {progress}%</p>
+            <progress value={progress} max="100" />
             <p>{status}</p>
             <div>
                 <h2>Uploaded Podcasts</h2>
