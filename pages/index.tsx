@@ -53,16 +53,25 @@ export default function Home() {
               Welcome to Vedik Logs, My Personal Website for Portfolio, Blogs and Podcasts.
             </p>
             <br />
-            <a href="#Blogs" className='button is-success is-outlined'>
-              Read My Blogs
-            </a>
+            <div className="buttons is-centered">
+            <Link href={"/blogs"}>
+              <a className='button is-danger is-outlined'>
+                Read My Blogs 📖🥸
+              </a>
+            </Link>
+            <Link href={"/podcasts"}>
+              <a className='button is-info is-outlined'>
+                Listen to My Podcasts 🎧😄
+              </a>
+            </Link>
+            </div>
           </div>
         </div>
       </section>
 
       <section className='section section--gradient'>
         <div className='container'>
-          <div className="box notification is-success">
+          <div className="box notification is-white">
             <p className="title is-2 has-text-centered">About Me</p>
             <p className="subtitle has-text-centered">
               Diligent web developer and software engineer with

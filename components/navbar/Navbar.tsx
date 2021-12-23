@@ -61,12 +61,12 @@ export default function Navbar(props) {
                                 <strong>Home</strong>
                             </a>
                         </Link>
-                        <Link href="/">
+                        <Link href="/blogs">
                             <a className="navbar-item">
                                 <strong>Blogs</strong>
                             </a>
                         </Link>
-                        <Link href="/">
+                        <Link href="/podcasts">
                             <a className="navbar-item">
                                 <strong>Podcasts</strong>
                             </a>
@@ -76,7 +76,7 @@ export default function Navbar(props) {
                     <div className="navbar-end">
                         <div className="navbar-item">
                             <div className="buttons">
-                                <div className="button is-info">
+                                <div className="button is-warning is-outlined">
                                     <strong>
                                     {
                                         user?
@@ -87,7 +87,7 @@ export default function Navbar(props) {
                                         </Link>
                                         :
                                         <Link href={"/love"}>
-                                            <p>💖😀</p>
+                                            <p >💖😀</p>
                                         </Link>
                                     }
                                     </strong>
