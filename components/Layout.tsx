@@ -6,7 +6,7 @@ export default function Layout(props) {
         <Fragment>
             <Navbar></Navbar>
             <main>
-            <Animation></Animation>
+            {/* <Animation></Animation> */}
                 {props.children}
             </main>
         </Fragment>
