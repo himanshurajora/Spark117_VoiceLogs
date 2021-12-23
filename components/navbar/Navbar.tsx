@@ -14,6 +14,16 @@ export default function Navbar(props) {
     const router = useRouter()
     const navbarRef = useRef(null)
     const burgerRef = useRef(null)
+
+
+    useEffect(() => {
+        console.log("route event");
+        router.events.on("routeChangeComplete", ()=> {
+            navbarRef.current.classList.remove("is-active");
+        burgerRef.current.classList.remove("is-active");
+        })
+    }, [router])
+
     const handleSignIn = async () => {
         try {
             const provider = new GoogleAuthProvider()
