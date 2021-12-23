@@ -62,8 +62,31 @@ export default function Home() {
 
       <section className='section section--gradient'>
         <div className='container'>
+          <div className="box notification is-success">
+            <p className="title is-2 has-text-centered">About Me</p>
+            <p className="subtitle has-text-centered">
+              Diligent web developer and software engineer with
+              over 2 years of experience. Eager to get new
+              opportunities and work on large scale projects.
+              Skilled in developing plans, managing projects, and
+              code documentation. currently working on NodeJS
+              and React.
+            </p>
+            <div className="box notification is-light">
+              <p className="title is-4">
+                More About Me😁
+              </p>
+              <p className="subtitle">
+                I like to explore and research
+                new subjects. My hobbies are
+                dancing, listening, and
+                making music. I put
+                experience above knowledge.
+              </p>
+            </div>
+          </div>
           <div>
-            <h2>Here Are My Podcasts</h2>
+            {/* <h2>Here Are My Podcasts</h2>
             <p><strong>{error}</strong></p>
             {
               loading ?
@@ -80,7 +103,7 @@ export default function Home() {
                     ))
                   }
                 </ul>
-            }
+            } */}
           </div>
         </div>
       </section>
