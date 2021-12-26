@@ -1,6 +1,7 @@
 import Head from 'next/head'
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+
 import { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
 // import NewForm from '../components/Form'
@@ -199,7 +200,7 @@ export default function Home() {
             <p className="title is-2 has-text-centered">Experience</p>
             <p className="subtitle has-text-centered">
               How would you know that I am good at what I do?
-              The best way is to see my "Experience"
+              The best way is to see my {'"Experience"'}
             </p>
             <hr />
             <div>
@@ -216,7 +217,7 @@ export default function Home() {
                       <p className="subtitle is-6">
                         <strong> LetsGrowMore | Sept-2021 - Oct-2021</strong><br />
                         Developed React JS and PHP web applications
-                        Educational Institutions' administers.
+                        Educational Institutions{"'"} administers.
                         <br /> <br /><br />
                       </p>
                     </div>
@@ -277,7 +278,7 @@ export default function Home() {
           <div className="box notification is-white">
             <p className="title is-2 has-text-centered">Resume</p>
             <p className="subtitle has-text-centered">
-              Download my "Resume"
+              Download my {'"Resume"'}
             </p>
             <div className="notification columns is-light is-centered">
               <a href="https://www.jiocloud.com/share/?s=VdRj1X3M0-maNtTjItccSzNs-5psb9VdwE0ANRsHFTQNL3" className="button is-large is-primary">Click Here</a>
