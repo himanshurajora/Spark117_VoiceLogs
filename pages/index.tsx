@@ -177,47 +177,117 @@ export default function Home() {
                 Along with these technologies I use some softwares, platforms and frameworks like -
                 <p className="subtitle is-5 has-text-black">
                   <br />
-                  <ul className='is-white'>
-                    <li>
-                      ReactJS, NodeJS, Angular, NextJS for web development.
-
-                    </li>
-                    <li>
-                      QT and dotnet for Desktop Applications.
-                    </li>
-                    <li>
-                      Apache2 for Server Side Applications.
-                    </li>
-                    <li>
-                      MySQL, MongoDB, Firestore for Database.
-                    </li>
-                    <li>
-                      Git, Github for version control.
-                    </li>
-                    <li>
-                      VSCode, Atom, Vim etc for code editing.
-                    </li>
-                    <li>
-                      Linux and Windows for Operating Systems.
-                    </li>
-                  </ul>
-
-
-
-
-
-
-
+                  ReactJS, NodeJS, Angular, NextJS for web development,
+                  QT and dotnet for Desktop Applications,
+                  Apache2 for Server Side Applications,
+                  MySQL, MongoDB, Firestore for Database,
+                  Git, Github for version control,
+                  VSCode, Atom, Vim etc for code editing,
+                  Linux and Windows for Operating Systems.
                 </p>
-
               </p>
-
             </div>
           </div>
           <div>
           </div>
         </div>
       </section>
+
+      <section className='section section--gradient'>
+        <div className='container'>
+          <div className="notification is-white">
+            <p className="title is-2 has-text-centered">Experience</p>
+            <p className="subtitle has-text-centered">
+              How would you know that I am good at what I do?
+              The best way is to see my "Experience"
+            </p>
+            <hr />
+            <div>
+              <div className="columns is-multiline is-centered is-vcentered">
+                <div className="column is-4">
+                  <div className="notification card">
+                    <div className="card-head">
+                      <p className="title is-4">
+                        Web Developer
+                      </p>
+                    </div>
+                    <hr />
+                    <div className="card-body">
+                      <p className="subtitle is-6">
+                        <strong> LetsGrowMore | Sept-2021 - Oct-2021</strong><br />
+                        Developed React JS and PHP web applications
+                        Educational Institutions' administers.
+                        <br /> <br /><br />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="column is-4">
+                  <div className="notification card">
+                    <div className="card-head">
+                      <p className="title is-4">
+                        Web Developer
+                      </p>
+                    </div>
+                    <hr />
+                    <div className="card-body">
+                      <p className="subtitle is-6">
+                        <strong>  The Sparks Foundation | Aug-2021 - Sept-2021</strong><br />
+                        Worked on REST APIs using NodeJS and MongoDB.
+                        Payment Integration, Banking and Security.
+                      </p>
+                      <br />
+                    </div>
+                  </div>
+                </div>
+                <div className="column is-4">
+                  <div className="notification card">
+                    <div className="card-head">
+                      <p className="title is-4">
+                        Web Developer
+                      </p>
+                    </div>
+                    <hr />
+                    <div className="card-body">
+                      <p className="subtitle is-6">
+                        <strong>   Trible Connect: Connecting Our Roots | June-2021 -
+                          Aug-2021</strong><br />
+                        Worked with a small team as a full stack Web
+                        Developer and Project Manager.
+                        Designed the UI and deployed the project within the
+                        decided timeline.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <p className="subtitle is-5">
+              This is just about my professional experience that I have certificates of.
+              Apart from these I have worked on a big number of personal projects and Also participated in
+              many hackathons. You can check some of them on my <a href="https://github.com/himanshurajora">Github</a>
+            </p>
+          <div>
+          </div>
+        </div>
+      </section>
+      <section className='section section--gradient'>
+        <div className='container'>
+          <div className="box notification is-white">
+            <p className="title is-2 has-text-centered">Resume</p>
+            <p className="subtitle has-text-centered">
+              Download my "Resume"
+            </p>
+            <div className="notification columns is-light is-centered">
+              <a href="https://www.jiocloud.com/share/?s=VdRj1X3M0-maNtTjItccSzNs-5psb9VdwE0ANRsHFTQNL3" className="button is-large is-primary">Click Here</a>
+            </div>
+          </div>
+          <div>
+          </div>
+        </div>
+      </section>
+      
     </Fragment >
   )
 }
