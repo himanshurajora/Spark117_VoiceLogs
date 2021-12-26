@@ -1,7 +1,7 @@
 import { Fragment, useRef } from "react";
 import Layout from "./Layout";
-import {} from 'firebase/storage'
-import {} from 'firebase/firestore'
+import { } from 'firebase/storage'
+import { } from 'firebase/firestore'
 
 
 export default function NewForm(props) {
@@ -23,17 +23,35 @@ export default function NewForm(props) {
 
     return (
         <Fragment>
-            <h1>Upload Podcast Form</h1>
+            <h1 className="title is-4">Upload Podcast Form</h1>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="title" autoComplete={"true"} required style={{width: "80%", fontSize: 20}} placeholder="Enter the title" ref={titleRef} />
-                <br />
-                <br />
-                <textarea name="discription" autoComplete="true" required ref={discriptionRef} style={{width: "80%", fontSize: 20}} placeholder="Enter the discription"></textarea>
-                <br /><br />
-                <input type="file" required name="file" ref={fileRef} />
-                <input type="submit" style={{padding: 10, fontSize: 20}} value="Submit" />
+                <div className="field">
+                    <input type="text" className="input" name="title" autoComplete={"true"} required style={{ fontSize: 20 }} placeholder="Enter the title" ref={titleRef} />
+                </div>
+                <div className="field">
+                    <textarea name="discription" className="input" autoComplete="true" required ref={discriptionRef} style={{ fontSize: 20, height: "150px" }} placeholder="Enter the discription"></textarea>
+                </div>
+                <div className="field">
+                    <div className="file is-boxed">
+                        <label className="file-label">
+                            <input type="file" className="file-input" name="file" required ref={fileRef} style={{ fontSize: 20 }} />
+                            <span className="file-cta">
+                                <span className="file-icon">
+                                    <i className="fas fa-upload"></i>
+                                </span>
+                                <span className="file-label">
+                                    Choose a file…
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div className="feild">
+                    <input className="button is-success" type="submit" style={{ padding: 10, fontSize: 20 }} value="Submit" />
+                </div>
             </form>
         </Fragment>
+
     )
 
 }
