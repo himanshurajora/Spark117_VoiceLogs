@@ -7,6 +7,7 @@ import {useCollection} from 'react-firebase-hooks/firestore'
 import NewForm from "../../components/Form";
 import { getFirestore, collection, addDoc, getDocs, deleteDoc, DocumentReference, onSnapshotsInSync } from 'firebase/firestore'
 import { getStorage, uploadBytesResumable, ref, getDownloadURL, deleteObject } from 'firebase/storage'
+import Image from 'next/image'
 export default function Upload() {
     const router = useRouter();
     const auth = getAuth(app);
@@ -55,7 +56,7 @@ export default function Upload() {
             }
         };
         fetchData();
-    }, []);
+    }, [db]);
 
     useEffect(() => {
         if (valueLoad) return;
@@ -142,7 +143,7 @@ export default function Upload() {
 
     return (
         <Fragment>
-            <img src={photoUrl} alt="My Profile" />
+            <Image src={photoUrl} alt="My Profile" />
             <h1>Welcome {displayName}</h1>
             <h3>{email}</h3>
             <NewForm onSubmit={handleSubmit} />

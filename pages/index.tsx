@@ -1,41 +1,13 @@
 import Head from 'next/head'
-import Image from 'next/image'
+// import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
-import NewForm from '../components/Form'
-import app from '../services/firebase'
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
+// import NewForm from '../components/Form'
+// import app from '../services/firebase'
+// import { getFirestore, collection, getDocs } from 'firebase/firestore'
 
 export default function Home() {
-
-  const firestore = getFirestore(app);
-  const db = collection(firestore, 'podcasts');
-  const [podcasts, setPodcasts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        var chunks = []
-        const docs = await getDocs(db);
-        docs.forEach(doc => {
-          chunks.push(doc.data())
-        })
-
-        setPodcasts(chunks);
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-      }
-    };
-    fetchData();
-  }, []);
-
-
-
   return (
     <Fragment>
       <section
@@ -117,7 +89,7 @@ export default function Home() {
             <hr />
             <div className="is-light">
               <p className="title is-3 has-text-black">
-                Here's a list of my skills.
+                Here is the list of my skills.
               </p>
               <hr />
               <ul className='notification is-white'>
