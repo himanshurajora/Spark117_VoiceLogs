@@ -176,6 +176,7 @@ export default function Home() {
 
               <p className="subtitle is-4 has-text-black">
                 Along with these technologies I use some softwares, platforms and frameworks like -
+              </p>
                 <p className="subtitle is-5 has-text-black">
                   <br />
                   ReactJS, NodeJS, Angular, NextJS for web development,
@@ -186,7 +187,6 @@ export default function Home() {
                   VSCode, Atom, Vim etc for code editing,
                   Linux and Windows for Operating Systems.
                 </p>
-              </p>
             </div>
           </div>
           <div>
