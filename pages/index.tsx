@@ -212,26 +212,20 @@ export default function Home() {
                     </li>
                     <li>
                       QT and dotnet for Desktop Applications.
-
                     </li>
                     <li>
                       Apache2 for Server Side Applications.
-
                     </li>
                     <li>
                       MySQL, MongoDB, Firestore for Database.
-
                     </li>
                     <li>
-
                       Git, Github for version control.
                     </li>
                     <li>
-
                       VSCode, Atom, Vim etc for code editing.
                     </li>
                     <li>
-
                       Linux and Windows for Operating Systems.
                     </li>
                   </ul>

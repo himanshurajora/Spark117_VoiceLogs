@@ -54,7 +54,7 @@ export default function Home() {
                         </p>
                         <br />
                         <Link href={"/blogs"}>
-                            <a href="#Blogs" className='button is-success is-outlined'>
+                            <a className='button is-success is-outlined'>
                                 Read My Blogs
                             </a>
                         </Link>
@@ -62,9 +62,9 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className='section section--gradient'>
+            <section className='section section--gradient has-background-white'>
                 <div className='container'>
-                    <div className="box notification is-light">
+                    <div className="">
                         <p className="title is-2 has-text-centered">🎤🎙️</p>
 
                         <div className="has-text-centered">
@@ -77,7 +77,7 @@ export default function Home() {
                                         {
                                             podcasts.map(podcast => (
                                                 <li key={podcast.title}>
-                                                    <h2 className='title is-4'>{podcast.title}</h2>
+                                                    <h2 className='title is-4 has-text-black'>{podcast.title}</h2>
                                                     <audio controls id='audio' src={podcast.audioUrl}></audio>
                                                     <p className='subtitle is-5'>{podcast.discription}</p>
                                                     <hr className='devider'/>
