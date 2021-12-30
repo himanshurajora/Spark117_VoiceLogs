@@ -40,7 +40,12 @@ export default function Upload() {
                     <div className='container has-text-centered'>
                         <div className="is-flex" style={{justifyContent: "center"}}>
                             <figure className="image is-128x128">
+                              {
+                                photoUrl ?
                                 <img src={photoUrl} alt='profile' className="is-rounded" />
+                                :
+                                <button className="button is-light is-fullwidth is-large is-loading"></button>
+                              }
                             </figure>
                         </div>
                         <h2 className='title is-1'>

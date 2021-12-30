@@ -89,6 +89,9 @@ export default function Navbar(props) {
                                 <div className="button is-warning is-outlined">
                                     <strong>
                                     {
+                                       loading ?
+                                        "Loading..."
+                                        :
                                         user?
                                         <Link href={"/upload"}>
                                             <p>
@@ -103,6 +106,13 @@ export default function Navbar(props) {
                                     </strong>
                                 </div>
                                 {
+                                    loading ?
+                                    <div className="button is-warning is-loading is-outlined">
+                                        <strong>
+                                            &nbsp;&nbsp;
+                                        </strong>
+                                    </div>
+                                    :
                                     user ?
                                         <a onClick={handleSignOut} className="button is-danger"><strong style={{color:"white"}} >Sign Out</strong></a>
                                         :
