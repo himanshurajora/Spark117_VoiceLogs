@@ -145,8 +145,8 @@ export default function Podcast() {
             </section>
         <hr />
             <p className="title is-4 has-text-warning">{status}</p>
-            <div>
-                <h2 className="title is-2">Uploaded Podcasts</h2>
+            <div className="has-text-centered">
+                <h2 className="title is-2 has-text-centered">Uploaded Podcasts</h2>
                 {
                     loadingPodcasts ?
                         <p className="title is-4">Loading...</p>
@@ -158,7 +158,7 @@ export default function Podcast() {
                                         <h2 className="title is-4">{podcast.data.title}</h2>
                                         <p className="subtitle is-5">{podcast.data.discription}</p>
                                         <audio controls src={podcast.data.audioUrl}></audio>
-                                        <button className="button is-danger" onClick={() => {
+                                        <button className="button is-rounded is-danger" style={{marginLeft: 10, marginTop: 8}} onClick={() => {
                                             deletePodcast(podcast.data.audioUrl, podcast.ref)
                                         }}>Delete</button>
                                         <hr />
