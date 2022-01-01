@@ -10,7 +10,7 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore'
 export default function Home() {
 
     const firestore = getFirestore(app);
-    const db = collection(firestore, 'podcasts');
+    const db = collection(firestore, 'blogs');
     const [podcasts, setPodcasts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
@@ -43,29 +43,28 @@ export default function Home() {
                 <div className='hero-body'>
                     <div className='container has-text-centered'>
                         <h2 className='title is-1'>
-                            My Podcasts
+                            My Blogs
                             {/* &lt;p&gt; Hello World!&lt;/p&gt;  */}
                         </h2>
                         <h2 className='title is-3'>
-                            Listen to My Voice, and Learn More About Me
+                            Read My Thoughts, Skills and Experiences
                         </h2>
                         <p className='subtitle is-family-secondary'>
-                            Here, I share my podcasts (I call them Voice Logs) and share my thoughts on various topics.
+                            Here, I share my blogs to share my knowledge on various topics.
                         </p>
                         <br />
-                        <Link href={"/blogs"}>
-                            <a className='button is-success is-outlined'>
-                                Read My Blogs
+                        <Link href={"/podcasts"}>
+                            <a className='button is-link is-outlined'>
+                                Listen to My Podcasts 🎙️
                             </a>
                         </Link>
                     </div>
                 </div>
             </section>
-
             <section className='section section--gradient has-background-white'>
                 <div className='container'>
                     <div className="">
-                        <p className="title is-2 has-text-centered">🎤🎙️</p>
+                        <p className="title is-2 has-text-centered">📖</p>
 
                         <div className="has-text-centered">
                             <p><strong>{error}</strong></p>
@@ -78,9 +77,11 @@ export default function Home() {
                                             podcasts.map(podcast => (
                                                 <li key={podcast.title}>
                                                     <h2 className='title is-4 has-text-black'>{podcast.title}</h2>
-                                                    <audio controls id='audio' src={podcast.audioUrl}></audio>
-                                                    <p className='subtitle is-5'>{podcast.discription}</p>
-                                                    <hr className='devider'/>
+                                                    <p className='subtitle is-5'>{podcast.createdAt.toDate().toLocaleString()}</p>
+                                                    <Link href={"/blogs/" + podcast._id} >
+                                                        <a className='button is-medium is-primary'>{"Read Full Blog"}</a>
+                                                    </Link>
+                                                    <hr className='devider' />
                                                 </li>
                                             ))
                                         }
