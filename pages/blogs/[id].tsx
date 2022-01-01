@@ -58,10 +58,10 @@ export default function Home() {
                                             {
                                                 podcasts.map(podcast => (
                                                     <li key={podcast.title}>
-                                                        <h2 className='title is-4 has-text-black'>{podcast.title}</h2>
-                                                        <p className='subtitle is-6 has-text-dark'>{podcast.createdAt.toDate().toLocaleString()}</p>
+                                                        <h2 className='title is-4 has-text-black'>{podcast.title ? podcast.title : ""}</h2>
+                                                        <p className='subtitle is-6 has-text-dark'>{podcast.createdAt.toDate() ? podcast.createdAt.toDate().toLocaleString() : ""}</p>
                                                         <hr />
-                                                        <pre className='subtitle is-6' style={{textAlign: 'left', overflow: 'auto', whiteSpace: 'pre-wrap', wordWrap: 'break-word'}}>{podcast.discription}</pre>
+                                                        <pre className='subtitle is-6-mobile is-5-tablet' style={{textAlign: 'left', overflow: 'auto', whiteSpace: 'pre-wrap', wordWrap: 'break-word'}}>{podcast.discription ? podcast.discription : ""}</pre>
                                                         <hr className='devider' />
                                                     </li>
                                                 ))

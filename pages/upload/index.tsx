@@ -48,12 +48,12 @@ export default function Upload() {
                               }
                             </figure>
                         </div>
-                        <h2 className='title is-1'>
+                        <div className='title is-1'>
                             <h1>{displayName}</h1>
-                        </h2>
-                        <h2 className='title is-3'>
+                        </div>
+                        <div className='title is-3'>
                             <h3>{email}</h3>
-                        </h2>
+                        </div>
                         <p className='subtitle is-family-secondary'>
                             Welcome to Vedik Logs, My Personal Website for Portfolio, Blogs and Podcasts.
                         </p>
