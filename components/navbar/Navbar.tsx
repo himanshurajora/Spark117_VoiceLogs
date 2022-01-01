@@ -19,8 +19,8 @@ export default function Navbar(props) {
     useEffect(() => {
         console.log("route event");
         router.events.on("routeChangeComplete", ()=> {
-            navbarRef.current.classList.remove("is-active");
-        burgerRef.current.classList.remove("is-active");
+            navbarRef.current?.classList.remove("is-active");
+        burgerRef.current?.classList.remove("is-active");
         })
     }, [router])
 
@@ -86,7 +86,7 @@ export default function Navbar(props) {
                     <div className="navbar-end">
                         <div className="navbar-item">
                             <div className="buttons">
-                                <div className="button is-warning is-outlined">
+                                {/* <div className="button is-warning is-outlined">
                                     <strong>
                                     {
                                        loading ?
@@ -104,7 +104,7 @@ export default function Navbar(props) {
                                         </Link>
                                     }
                                     </strong>
-                                </div>
+                                </div> */}
                                 {
                                     loading ?
                                     <div className="button is-warning is-loading is-outlined">
