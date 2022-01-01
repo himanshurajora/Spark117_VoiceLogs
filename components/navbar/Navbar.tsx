@@ -6,7 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import app from '../../services/firebase'
 import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from 'firebase/auth'
 import styles from './navbar.module.css'
-
+import Image from 'next/image'
 export default function Navbar(props) {
 
     const auth = getAuth(app)
@@ -84,6 +84,7 @@ export default function Navbar(props) {
                     </div>
 
                     <div className="navbar-end">
+                    <Image src="/sparkts.png" width={50} height={50} alt='spark117Logo'></Image>
                         <div className="navbar-item">
                             <div className="buttons">
                                 {/* <div className="button is-warning is-outlined">

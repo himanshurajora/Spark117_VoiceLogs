@@ -1,5 +1,5 @@
 import Head from 'next/head'
-// import Image from 'next/image'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 import { Fragment, useEffect, useState } from 'react'
@@ -15,6 +15,7 @@ export default function Home() {
         className='hero is-light is-medium is-family-secondary'>
         <div className='hero-body'>
           <div className='container has-text-centered'>
+            <Image src="/sparkts.png" width={100} height={100} alt='spark117Logo'></Image>
             <h2 className='title is-1'>
               Hello World!
               {/* &lt;p&gt; Hello World!&lt;/p&gt;  */}
@@ -75,8 +76,8 @@ export default function Home() {
         <div className='container has-text-black'>
           <div className="has-text-light">
             <p className="title is-2 has-text-centered">Skills</p>
+            <p className="title is-4">Skills that I have acquired over the years.</p>
             <p className="subtitle has-text-centered has-text-black">
-              <p className="title is-4">Skills that I have acquired over the years.</p>
               <br />
               I started my journey in programming with C# and made a lot of Console Applications and Games using Unity Game Engine to learn the basic concepts.
               Then I started learning HTML, CSS and PHP while I was not aware of Javascript but indirectly using it.
@@ -177,16 +178,16 @@ export default function Home() {
               <p className="subtitle is-4 has-text-black">
                 Along with these technologies I use some softwares, platforms and frameworks like -
               </p>
-                <p className="subtitle is-5 has-text-black">
-                  <br />
-                  ReactJS, NodeJS, Angular, NextJS for web development,
-                  QT and dotnet for Desktop Applications,
-                  Apache2 for Server Side Applications,
-                  MySQL, MongoDB, Firestore for Database,
-                  Git, Github for version control,
-                  VSCode, Atom, Vim etc for code editing,
-                  Linux and Windows for Operating Systems.
-                </p>
+              <p className="subtitle is-5 has-text-black">
+                <br />
+                ReactJS, NodeJS, Angular, NextJS for web development,
+                QT and dotnet for Desktop Applications,
+                Apache2 for Server Side Applications,
+                MySQL, MongoDB, Firestore for Database,
+                Git, Github for version control,
+                VSCode, Atom, Vim etc for code editing,
+                Linux and Windows for Operating Systems.
+              </p>
             </div>
           </div>
           <div>
@@ -264,11 +265,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-            <p className="subtitle is-5">
-              This is just about my professional experience that I have certificates of.
-              Apart from these I have worked on a big number of personal projects and Also participated in
-              many hackathons. You can check some of them on my <a href="https://github.com/himanshurajora">Github</a>
-            </p>
+          <p className="subtitle is-5">
+            This is just about my professional experience that I have certificates of.
+            Apart from these I have worked on a big number of personal projects and Also participated in
+            many hackathons. You can check some of them on my <a href="https://github.com/himanshurajora">Github</a>
+          </p>
           <div>
           </div>
         </div>
@@ -287,8 +288,23 @@ export default function Home() {
           <div>
           </div>
         </div>
+
       </section>
-      
+      <hr />
+      <section className="section">
+        <div className="container">
+          <div className="notification is-light">
+            <iframe style={{ height: '300px', width: '100%' }} loading="eager" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCYKGoBvxSupFJ5cnNqDf0cRMhYPKRckE0
+    &q=Jaipur,Rajasthan">
+            </iframe>
+          </div>
+            <p className="subtitle is-5 has-text-centered">
+              I live somewhere in India. In Jaipur, Rajasthan to be more presice.
+              Well, not fully presice, but I am sure you will find me there.
+            </p>
+        </div>
+      </section>
+
     </Fragment >
   )
 }

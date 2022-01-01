@@ -74,6 +74,7 @@ export default function Home() {
                                     :
                                     <ul>
                                         {
+                                            podcasts.length ? 
                                             podcasts.map(podcast => (
                                                 <li key={podcast.title}>
                                                     <h2 className='title is-4 has-text-black'>{podcast.title}</h2>
@@ -83,7 +84,8 @@ export default function Home() {
                                                     </Link>
                                                     <hr className='devider' />
                                                 </li>
-                                            ))
+                                            )):
+                                            <p className='title is-3'>No Blogs Found</p>
                                         }
                                     </ul>
                             }
