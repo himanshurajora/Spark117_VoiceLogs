@@ -22,7 +22,6 @@ export default function Home() {
         const fetchData = async () => {
             try {
                 var chunks = []
-                console.log(router.query.id)
                 const q = query(db, where('_id', '==', parseInt(router.query.id.toString())))
                 const docs = await getDocs(q);
                 console.log(docs)
