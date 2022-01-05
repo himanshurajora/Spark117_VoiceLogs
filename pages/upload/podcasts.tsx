@@ -83,22 +83,22 @@ export default function Podcast() {
                     setProgress(progress);
                 }, (error) => {
                     console.log(error);
-                }, () => {
+                }, async () => {
                     setStatus('Upload Complete');
+                    const url = await getDownloadURL(fileRef);
+
+                    const podcast = {
+                        title,
+                        discription,
+                        user: user.uid,
+                        audioUrl: url,
+                        createdAt: new Date()
+                    }
+
+                    let docRef = await addDoc(db, podcast);
                 });
 
 
-                const url = await getDownloadURL(fileRef);
-
-                const podcast = {
-                    title,
-                    discription,
-                    user: user.uid,
-                    audioUrl: url,
-                    createdAt: new Date()
-                }
-
-                let docRef = await addDoc(db, podcast);
 
 
             }
@@ -112,14 +112,14 @@ export default function Podcast() {
 
     const deletePodcast = async (url: string, podcastRef: DocumentReference) => {
         try {
-           
-            if(confirm('Are you sure you want to delete this podcast?')){
+
+            if (confirm('Are you sure you want to delete this podcast?')) {
                 const fileRef = ref(storage, url);
                 await deleteObject(fileRef);
                 await deleteDoc(podcastRef);
                 setStatus('Deleted Successfully');
             }
-            else{
+            else {
                 setStatus('Cancelled');
             }
         }
@@ -143,7 +143,7 @@ export default function Podcast() {
                     </div>
                 </div>
             </section>
-        <hr />
+            <hr />
             <p className="title is-4 has-text-warning">{status}</p>
             <div className="has-text-centered">
                 <h2 className="title is-2 has-text-centered">Uploaded Podcasts</h2>
@@ -158,7 +158,7 @@ export default function Podcast() {
                                         <h2 className="title is-4">{podcast.data.title}</h2>
                                         <p className="subtitle is-5">{podcast.data.discription}</p>
                                         <audio controls src={podcast.data.audioUrl}></audio>
-                                        <button className="button is-rounded is-danger" style={{marginLeft: 10, marginTop: 8}} onClick={() => {
+                                        <button className="button is-rounded is-danger" style={{ marginLeft: 10, marginTop: 8 }} onClick={() => {
                                             deletePodcast(podcast.data.audioUrl, podcast.ref)
                                         }}>Delete</button>
                                         <hr />
