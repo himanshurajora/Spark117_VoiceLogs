@@ -44,7 +44,6 @@ export default function Home() {
                     <div className='container has-text-centered'>
                         <h2 className='title is-1'>
                             My Podcasts
-                            {/* &lt;p&gt; Hello World!&lt;/p&gt;  */}
                         </h2>
                         <h2 className='title is-3'>
                             Listen to My Voice, and Learn More About Me
@@ -79,8 +78,13 @@ export default function Home() {
                                                 <li key={podcast.title}>
                                                     <h2 className='title is-4 has-text-black'>{podcast.title}</h2>
                                                     <audio controls id='audio' src={podcast.audioUrl}></audio>
-                                                    <p className='subtitle is-5'>{podcast.discription}</p>
-                                                    <hr className='devider'/>
+                                                    <div className="columns is-centered">
+                                                        <div className="column is-12-mobile is-5">
+                                                            <br />
+                                                            <p className='subtitle is-5'>{podcast.discription}</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr className='devider' />
                                                 </li>
                                             ))
                                         }
