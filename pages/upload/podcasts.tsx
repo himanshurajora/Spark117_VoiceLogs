@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getStorage, uploadBytesResumable, ref, getDownloadURL, deleteObject } from 'firebase/storage'
 import app from '../../services/firebase'
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, DocumentReference, onSnapshotsInSync } from 'firebase/firestore'
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, DocumentReference, onSnapshotsInSync, orderBy, query, limit } from 'firebase/firestore'
 import { useCollection } from 'react-firebase-hooks/firestore'
 import { useAuthState } from "react-firebase-hooks/auth";
 import NewForm from "../../components/Form";
@@ -26,7 +26,9 @@ export default function Podcast() {
         const fetchData = async () => {
             try {
                 var chunks = []
-                const docs = await getDocs(db);
+                const q = query(db, orderBy('createdAt', 'desc'));
+                const docs = await getDocs(q);
+
                 docs.forEach(doc => {
                     chunks.push({
                         ref: doc.ref,

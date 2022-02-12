@@ -5,7 +5,7 @@ import { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
 import NewForm from '../../components/Form'
 import app from '../../services/firebase'
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
+import { getFirestore, collection, getDocs, orderBy, query } from 'firebase/firestore'
 
 export default function Home() {
 
@@ -20,7 +20,8 @@ export default function Home() {
         const fetchData = async () => {
             try {
                 var chunks = []
-                const docs = await getDocs(db);
+                const q = query(db, orderBy('createdAt', 'desc'));
+                const docs = await getDocs(q);
                 docs.forEach(doc => {
                     chunks.push(doc.data())
                 })

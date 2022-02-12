@@ -9,7 +9,6 @@ import BlogForm from "../../components/BlogForm";
 export default function Podcast() {
 
     const [status, setStatus] = useState('');
-    const storage = getStorage(app);
     const auth = getAuth(app);
     const [podcasts, setPodcasts] = useState([]);
     const [loadingBlogs, setLoadingBlogs] = useState(true);
