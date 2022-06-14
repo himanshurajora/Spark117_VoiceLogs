@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
-import { Repo } from "../@types";
+import { Repo } from "../../@types";
 
 export default function Projects() {
   const [projects, setProjects] = useState<Repo[]>([]);
@@ -63,8 +63,8 @@ export default function Projects() {
                 </button>
               ) : (
                 <div className="columns is-multiline">
-                  {projects.map((project) => (
-                    <div className="column is-one-third">
+                  {projects.map((project, index) => (
+                    <div className="column is-one-third" key={index}>
                       <div className="card">
                         <div className="card-content">
                           <div className="media">
