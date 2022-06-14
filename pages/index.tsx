@@ -18,7 +18,7 @@ export default function Home() {
               src="/me.png"
               width={150}
               height={150}
-              style={{ borderRadius: "50%" }}
+              className="rounded-image"
               alt="Himanshu Jangid"
             ></Image>
             <h2 className="title is-2">
