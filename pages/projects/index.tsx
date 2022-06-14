@@ -89,7 +89,9 @@ export default function Projects() {
                                 Last Updated:{" "}
                                 {new Date(project.updated_at).toDateString()}
                               </p>
-                              <a href={project.url}>View on GitHub</a>
+                              <a href={project.html_url} target={"_blank"}>
+                                View on GitHub
+                              </a>
                             </div>
                           </div>
                         </div>
