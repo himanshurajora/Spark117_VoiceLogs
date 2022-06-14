@@ -76,6 +76,15 @@ export default function Projects() {
                                     "..."
                                   : "No Description"}
                               </p>
+                              <div className="tags are-small">
+                                {project.topics?.map((topic, index) => {
+                                  return (
+                                    <span key={index} className="tag is-danger">
+                                      {topic}
+                                    </span>
+                                  );
+                                })}
+                              </div>
                               <p className="subtitle is-6">
                                 Last Updated:{" "}
                                 {new Date(project.updated_at).toDateString()}
