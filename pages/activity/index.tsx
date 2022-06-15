@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
 import { Activity, Repo } from "../../@types";
 
-export default function activity() {
+export default function ActivityPage() {
   const [activity, setActivity] = useState<Activity[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -49,7 +49,7 @@ export default function activity() {
             <a
               href="https://gitstare.web.app/himanshurajora"
               className="button is-warning"
-              target={"_blank"}
+              target="_blank"
             >
               Go Here For Detailed Activity
             </a>
