@@ -74,6 +74,7 @@ export default function Navbar(props) {
           </a>
         </div>
 
+        {/* TODO: Fix Semantic errors */}
         <div id="navbarBasicExample" className={"navbar-menu"} ref={navbarRef}>
           <div className="navbar-start">
             <Link href="/">
@@ -84,6 +85,11 @@ export default function Navbar(props) {
             <Link href="/projects">
               <a className="navbar-item">
                 <strong>Projects</strong>
+              </a>
+            </Link>
+            <Link href="/activity">
+              <a className="navbar-item">
+                <strong>Activity</strong>
               </a>
             </Link>
             <Link href="/blogs">

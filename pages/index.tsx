@@ -44,7 +44,7 @@ export default function Home() {
                   Listen to My Podcasts 🎧😄
                 </a>
               </Link>
-              <Link href={"/podcasts"}>
+              <Link href={"/projects"}>
                 <a className="button is-success is-outlined">
                   See My Projects 💻
                 </a>
