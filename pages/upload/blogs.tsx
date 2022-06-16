@@ -62,9 +62,9 @@ export default function Podcast() {
 
     const handleSubmit = async (data) => {
         try {
-            const { title, discription } = data;
+            const { title, description } = data;
 
-            if (title === '' || discription === '') {
+            if (title === '' || description === '') {
                 setStatus('Please fill in all the fields');
             }
             else {
@@ -74,7 +74,7 @@ export default function Podcast() {
 
                 const podcast = {
                     title,
-                    discription,
+                    description,
                     user: user.uid,
                     createdAt: new Date(),
                     _id: Date.now()
