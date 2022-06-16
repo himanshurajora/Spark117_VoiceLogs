@@ -3,7 +3,6 @@ import jwt from 'jsonwebtoken'
 
 export default function login(req : NextApiRequest, res : NextApiResponse) {
   const {username, password} = req.body
-    console.log(username, password)
     if(username === "spiral117" && password === "spiralhimanshuraja"){
         const token = jwt.sign({
             username,

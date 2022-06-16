@@ -20,7 +20,6 @@ export default function Navbar(props) {
   const burgerRef = useRef(null);
 
   useEffect(() => {
-    console.log("route event");
     router.events.on("routeChangeComplete", () => {
       navbarRef.current?.classList.remove("is-active");
       burgerRef.current?.classList.remove("is-active");

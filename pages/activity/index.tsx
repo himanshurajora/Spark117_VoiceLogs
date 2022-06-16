@@ -15,7 +15,6 @@ export default function ActivityPage() {
           `https://api.github.com/users/himanshurajora/events`
         );
         let data = (await res.json()) as Activity[];
-        console.log(data);
         // sort by updated_at desc
         data = data.sort((a, b) => {
           return (

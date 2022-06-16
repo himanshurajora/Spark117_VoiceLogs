@@ -24,7 +24,6 @@ export default function Home() {
                 var chunks = []
                 const q = query(db, where('_id', '==', parseInt(router.query.id.toString())))
                 const docs = await getDocs(q);
-                console.log(docs)
                 docs.forEach(doc => {
                     chunks.push(doc.data())
                 })

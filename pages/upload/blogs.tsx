@@ -85,7 +85,6 @@ export default function Podcast() {
             }
         }
         catch (error) {
-            console.log(error);
             setStatus("error");
         }
 
