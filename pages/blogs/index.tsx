@@ -1,4 +1,4 @@
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore, orderBy, query } from "firebase/firestore";
 import Head from "next/head";
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
@@ -15,7 +15,8 @@ export default function Home() {
     const fetchData = async () => {
       try {
         var chunks = [];
-        const docs = await getDocs(db);
+        const fetchBlogsQuery = query(db, orderBy("createdAt", "desc"));
+        const docs = await getDocs(fetchBlogsQuery);
         docs.forEach((doc) => {
           chunks.push(doc.data());
         });
@@ -70,12 +71,12 @@ export default function Home() {
                   &sp;
                 </button>
               ) : (
-                <ul>
+                <div className="columns is-multiline">
                   {podcasts.length ? (
                     podcasts.map((podcast) => (
-                      <li key={podcast.title}>
+                      <div className="column box" style={{"margin": "3px"}} key={podcast._id}>
                         <h2 className="title is-4 has-text-black">
-                          {podcast.title}
+                          {podcast.title.trim() ? podcast.title : "No Title"}
                         </h2>
                         <p className="subtitle is-5">
                           {podcast.createdAt.toDate().toLocaleString()}
@@ -86,12 +87,12 @@ export default function Home() {
                           </a>
                         </Link>
                         <hr className="devider" />
-                      </li>
+                      </div>
                     ))
                   ) : (
                     <p className="title is-3">No Blogs Found</p>
                   )}
-                </ul>
+                </div>
               )}
             </div>
           </div>

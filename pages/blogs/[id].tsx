@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { Fragment, useEffect, useState } from "react";
 import app from "../../services/firebase";
 import "react-markdown-editor-lite/lib/index.css";
-
+import "highlight.js/styles/atom-one-dark.css";
 export default function Blogs() {
   const firestore = getFirestore(app);
   const db = collection(firestore, "blogs");
