@@ -10152,3 +10152,11 @@ input[type="submit"].button {
   background-color: white;
   box-sizing: initial;
 }
+
+.custom-html-style pre code {
+  background-color: black;
+}
+
+.custom-html-style pre{
+  background-color: black !important;
+}

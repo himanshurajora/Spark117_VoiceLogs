@@ -11,6 +11,7 @@ specifiers:
   eslint: 8.4.1
   eslint-config-next: 12.0.7
   firebase: ^9.6.1
+  highlight.js: ^11.5.1
   js-cookie: ^3.0.1
   jsonwebtoken: ^8.5.1
   markdown-it: ^13.0.1
@@ -28,6 +29,7 @@ dependencies:
   '@types/next': 9.0.0_sfoxds7t5ydpegc3knd667wn6m
   '@types/react-dom': 17.0.17
   firebase: 9.8.3
+  highlight.js: 11.5.1
   js-cookie: 3.0.1
   jsonwebtoken: 8.5.1
   markdown-it: 13.0.1
@@ -1713,6 +1715,11 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /highlight.js/11.5.1:
+    resolution: {integrity: sha512-LKzHqnxr4CrD2YsNoIf/o5nJ09j4yi/GcH5BnYz9UnVpZdS4ucMgvP61TDty5xJcFGRjnH4DpujkS9bHT3hq0Q==}
+    engines: {node: '>=12.0.0'}
+    dev: false
 
   /http-parser-js/0.5.6:
     resolution: {integrity: sha512-vDlkRPDJn93swjcjqMSaGSPABbIarsr1TLAui/gLDXzV5VsJNdXNzMYDyNBLQkjWQCJ1uizu8T2oDMhmGt0PRA==}

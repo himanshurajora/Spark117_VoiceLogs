@@ -2,7 +2,8 @@ import { useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import "react-markdown-editor-lite/lib/index.css";
 import MarkdownIt from "markdown-it";
-
+import hljs from "highlight.js";
+import "highlight.js/styles/atom-one-dark.css";
 const MdEditor = dynamic(() => import("react-markdown-editor-lite"), {
   ssr: false,
 });
@@ -26,6 +27,16 @@ export default function BlogForm(props) {
     html: true,
     linkify: true,
     typographer: true,
+    highlight: function (str, lang, attrs) {
+      lang = lang ? lang : "javascript";
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          console.log(lang);
+          return hljs.highlight(lang, str).value;
+        } catch (__) {}
+      }
+      return "";
+    },
   });
 
   return (
